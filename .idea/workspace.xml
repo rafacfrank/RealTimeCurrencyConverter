@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d833a16a-c8d7-4381-84ce-9907841266a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/models/Conversion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/models/CurrencyRequest.java" afterDir="false" />
+    <list default="true" id="d833a16a-c8d7-4381-84ce-9907841266a9" name="Changes" comment="Http requests and first tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +86,19 @@
       <option name="presentableId" value="Default" />
       <updated>1715286960519</updated>
     </task>
+    <task id="LOCAL-00001" summary="Http requests and first tests">
+      <option name="closed" value="true" />
+      <created>1715305590412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715305590412</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Http requests and first tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Http requests and first tests" />
   </component>
 </project>
