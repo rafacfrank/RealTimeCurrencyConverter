@@ -2,8 +2,6 @@ package br.com.rafacfrank.realtimecurrencyconverter;
 
 import br.com.rafacfrank.realtimecurrencyconverter.models.Conversion;
 import br.com.rafacfrank.realtimecurrencyconverter.models.CurrencyRequest;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.Scanner;
 
@@ -12,6 +10,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        // montando o menu e lendo opções
         String menu = """
                 ******************************************************
                     Conversor de Moedas em tempo real
@@ -40,10 +39,20 @@ public class Main {
         var amount = scanner.nextDouble();
 
         CurrencyRequest currencyRequest = new CurrencyRequest();
-
         Conversion conversion = currencyRequest.conversion(baseCurrency,targetCurrency, amount);
-        System.out.println(conversion);
+
+        if (conversion.base_code() != null || conversion.target_code() != null) {
+            System.out.println("A conversão de " + conversion.base_code() + " " + String.format("%.2f", amount));
+            System.out.println("Resulta em " + conversion.target_code() + " " + String.format("%.2f", conversion.conversion_result()));
+            System.out.println("A taxa de conversão verificada foi de " + conversion.conversion_rate());
+
+            System.out.println("Obrigado por utilizar nossos serviços");
+
+        } else {
+            System.out.println("Digitou algum codigo de moeda errado, favor corrigir");
+        }
 
 
     }
+
 }
