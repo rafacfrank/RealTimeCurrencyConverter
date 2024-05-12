@@ -3,6 +3,7 @@ package br.com.rafacfrank.realtimecurrencyconverter;
 import br.com.rafacfrank.realtimecurrencyconverter.models.Conversion;
 import br.com.rafacfrank.realtimecurrencyconverter.models.CurrencyRequest;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -36,13 +37,13 @@ public class Main {
 
 
             System.out.println(menu);
-
+            ArrayList<Conversion> historico = new ArrayList<>();
             int opcao = 0;
             while (opcao != 2) {
-                System.out.println("Você quer fazer um cotação? escolha o opção: ");
+                System.out.println("Você quer fazer um cotação? Conferir seu histórico? escolha o opção: ");
                 System.out.println("1 - SIM");
                 System.out.println("2 - NÃO");
-
+                System.out.println("3 - HISTÓRICO");
 
                 opcao = scanner.nextInt();
                 if (opcao == 1) {
@@ -56,10 +57,8 @@ public class Main {
                     double amount = scanner.nextDouble();
 
                     CurrencyRequest currencyRequest = new CurrencyRequest();
-
-
                     Conversion conversion = currencyRequest.conversion(baseCurrency, targetCurrency, amount);
-
+                    historico.add(conversion);
 
                     if (conversion.base_code() != null || conversion.target_code() != null) {
                         System.out.println("\nA conversão de " + conversion.base_code() + " " + String.format("%.2f", amount));
@@ -71,8 +70,17 @@ public class Main {
                         System.out.println("Digitou algum codigo de moeda errado, favor corrigir");
                     }
                 }
+                //imprimir historico
+                if (opcao == 3) {
+                    for (Conversion elemento : historico) {
+                        System.out.println("\nMoeda base: " + elemento.base_code() + " " + String.format("%.2f", elemento.conversion_result() / elemento.conversion_rate()));
+                        System.out.println("Moeda alvo: " + elemento.target_code() + " " + String.format("%.2f", elemento.conversion_result()));
+                        System.out.println("A uma taxa de :" + elemento.conversion_rate() + "\n");
+                    }
+                }
             }
             System.out.println("Obrigado por utilizar nossos serviços");
+
         } catch (InputMismatchException e) {
             System.out.println("Erro de digitação, comece denovo");
         }
