@@ -29,7 +29,7 @@ public class Main {
                 COP - Peso Colombiano     CUP - Peso Cubano     
                                 
                 É possível colocar o código de qualquer outra moeda conhecida
-                ******************************************************
+                *****************************************************
                 """;
 
         try {
