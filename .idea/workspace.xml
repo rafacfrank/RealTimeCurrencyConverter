@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d833a16a-c8d7-4381-84ce-9907841266a9" name="Changes" comment="Apresentando resultados">
+    <list default="true" id="d833a16a-c8d7-4381-84ce-9907841266a9" name="Changes" comment="Tratando exceções">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rafacfrank/realtimecurrencyconverter/Main.java" afterDir="false" />
     </list>
@@ -110,13 +110,22 @@
       <option name="project" value="LOCAL" />
       <updated>1715385420566</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tratando exceções">
+      <option name="closed" value="true" />
+      <created>1715386462512</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715386462512</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Http requests and first tests" />
     <MESSAGE value="Menu atualizado" />
     <MESSAGE value="Apresentando resultados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apresentando resultados" />
+    <MESSAGE value="Tratando exceções" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tratando exceções" />
   </component>
 </project>

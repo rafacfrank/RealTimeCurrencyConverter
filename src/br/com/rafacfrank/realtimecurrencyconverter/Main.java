@@ -15,8 +15,8 @@ public class Main {
         String menu = """
                 ******************************************************
                     Conversor de Moedas em tempo real
-                
-                  Voê pode converter valores de moedas, onde deve 
+                                
+                  Pode converter valores de moedas, onde deve 
                   entrar com a moeda de origem, a moeda alvo, e o
                   valor. Abaixo veja as siglas de algumas moedas
                  
@@ -27,43 +27,56 @@ public class Main {
                 CHF - Franco Suiço        CLP - Peso Chileno
                 ARS - Peso Argentino      BOB - Boliviano Boliviano
                 COP - Peso Colombiano     CUP - Peso Cubano     
-                
+                                
                 É possível colocar o código de qualquer outra moeda conhecida
-                
                 ******************************************************
                 """;
 
         try {
 
-        System.out.println(menu);
-        System.out.println("digite o código da moeda atual: ");
-        var baseCurrency = scanner.nextLine().toUpperCase();
-        System.out.println("digite o código da moeda alvo: ");
-        var targetCurrency = scanner.nextLine().toUpperCase();
-        System.out.println("digite o valor desejado: ");
-        var amount = scanner.nextDouble();
 
-        CurrencyRequest currencyRequest = new CurrencyRequest();
+            System.out.println(menu);
 
+            int opcao = 0;
+            while (opcao != 2) {
+                System.out.println("Você quer fazer um cotação? escolha o opção: ");
+                System.out.println("1 - SIM");
+                System.out.println("2 - NÃO");
 
 
+                opcao = scanner.nextInt();
+                if (opcao == 1) {
 
-            Conversion conversion = currencyRequest.conversion(baseCurrency, targetCurrency, amount);
+
+                    System.out.println("digite o código da moeda atual: ");
+                    String baseCurrency = scanner.next().toUpperCase();
+                    System.out.println("digite o código da moeda alvo: ");
+                    String targetCurrency = scanner.next().toUpperCase();
+                    System.out.println("digite o valor desejado: ");
+                    double amount = scanner.nextDouble();
+
+                    CurrencyRequest currencyRequest = new CurrencyRequest();
 
 
-            if (conversion.base_code() != null || conversion.target_code() != null) {
-                System.out.println("A conversão de " + conversion.base_code() + " " + String.format("%.2f", amount));
-                System.out.println("Resulta em " + conversion.target_code() + " " + String.format("%.2f", conversion.conversion_result()));
-                System.out.println("A taxa de conversão verificada foi de " + conversion.conversion_rate());
+                    Conversion conversion = currencyRequest.conversion(baseCurrency, targetCurrency, amount);
 
-                System.out.println("Obrigado por utilizar nossos serviços");
 
-            } else {
-                System.out.println("Digitou algum codigo de moeda errado, favor corrigir");
+                    if (conversion.base_code() != null || conversion.target_code() != null) {
+                        System.out.println("\nA conversão de " + conversion.base_code() + " " + String.format("%.2f", amount));
+                        System.out.println("Resulta em " + conversion.target_code() + " " + String.format("%.2f", conversion.conversion_result()));
+                        System.out.println("A taxa de conversão verificada foi de " + conversion.conversion_rate() + "\n");
+
+
+                    } else {
+                        System.out.println("Digitou algum codigo de moeda errado, favor corrigir");
+                    }
+                }
             }
-        }catch (InputMismatchException e){
+            System.out.println("Obrigado por utilizar nossos serviços");
+        } catch (InputMismatchException e) {
             System.out.println("Erro de digitação, comece denovo");
         }
+
 
     }
 
