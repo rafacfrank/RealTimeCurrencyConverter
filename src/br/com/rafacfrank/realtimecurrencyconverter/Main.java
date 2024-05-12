@@ -16,22 +16,22 @@ public class Main {
         String menu = """
                 ******************************************************
                     Conversor de Moedas em tempo real
-                                
-                  Pode converter valores de moedas, onde deve 
+                               \s
+                  Pode converter valores de moedas, onde deve\s
                   entrar com a moeda de origem, a moeda alvo, e o
                   valor. Abaixo veja as siglas de algumas moedas
-                 
+                \s
                 USD - Dolar Americano     EUR - Euro
                 BRL - Real Brasileiro     PEN - Sol Peruano
                 GBP - Libra Esterlina     JPY - Iene Japonês
                 PYG - Guarani Paraguaio   UYU - Peso Uruguaio
                 CHF - Franco Suiço        CLP - Peso Chileno
                 ARS - Peso Argentino      BOB - Boliviano Boliviano
-                COP - Peso Colombiano     CUP - Peso Cubano     
-                                
+                COP - Peso Colombiano     CUP - Peso Cubano    \s
+                               \s
                 É possível colocar o código de qualquer outra moeda conhecida
                 *****************************************************
-                """;
+               \s""";
 
         try {
 
@@ -75,7 +75,7 @@ public class Main {
                     for (Conversion elemento : historico) {
                         System.out.println("\nMoeda base: " + elemento.base_code() + " " + String.format("%.2f", elemento.conversion_result() / elemento.conversion_rate()));
                         System.out.println("Moeda alvo: " + elemento.target_code() + " " + String.format("%.2f", elemento.conversion_result()));
-                        System.out.println("A uma taxa de :" + elemento.conversion_rate() + "\n");
+                        System.out.println("A uma taxa de: " + elemento.conversion_rate() + "\n");
                     }
                 }
             }
